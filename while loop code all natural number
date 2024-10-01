@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+int i=1;
+printf("enter the all natural number are:\n");
+while (i <= 10 )
+{
+    printf("%d\t",i);
+    i++;
+}
+    printf("\n");
+    return 0;
+}
