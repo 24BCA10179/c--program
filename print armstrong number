@@ -1,0 +1,50 @@
+#include <stdio.h>
+int main() 
+{
+    int x,y,m,z;
+    int remain,divisor,quotient;
+    int quo_1,quo_2,quo_3,rem_1,rem_2,rem_3;
+    for(m=0;m<=10000;m++)
+    {
+        if(m>=1 && m<=9)
+        {
+            printf("%d\n",m);  
+        }
+        else if(m>=10 && m<=99)
+        {
+            quotient=m/10;
+            remain=m%10;
+            x=(quotient*quotient)+(remain*remain);
+            if(m==x)
+            {
+                printf("%d\n",m);
+            }
+        }
+        else if(m>=100 && m<=999)
+        {
+            quotient=m/100;// 1
+            remain=m%100;
+            quo_1=remain/10;// 2
+            rem_1=remain%10;// 3
+            y=(quotient*quotient*quotient)+(quo_1*quo_1*quo_1)+(rem_1*rem_1*rem_1);
+            if(y==m){
+                printf("%d\n",m);
+            }
+        }
+        else if(m>=1000 && m<=9999){
+            quotient=m/10000;// 1
+            remain=m%10000;
+            quo_1=remain/1000;//2
+            rem_1=remain%1000;
+            quo_2=rem_1/100;//3
+            rem_2=rem_1%100;
+            quo_3=rem_2/10;//4
+            rem_3=rem_2%10;//5
+            z=(quotient*quotient*quotient*quotient)+(quo_1*quo_1*quo_1*quo_1)+(quo_2*quo_2*quo_2*quo_2)+(quo_3*quo_3*quo_3*quo_3)+(rem_3*rem_3*rem_3*rem_3);
+            if(z==m){
+                printf("%d\n",m);
+            }
+        }
+    }
+    return 0;
+}
